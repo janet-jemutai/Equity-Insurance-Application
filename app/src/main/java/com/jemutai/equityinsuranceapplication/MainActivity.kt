@@ -1,18 +1,17 @@
 package com.jemutai.equityinsuranceapplication
 
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.jemutai.equityinsuranceapplication.navigation.AppNavigation
-import com.jemutai.equityinsuranceapplication.ui.theme.CustomColors
 import com.jemutai.equityinsuranceapplication.ui.theme.EquityInsuranceApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,9 +20,34 @@ class MainActivity : ComponentActivity() {
         setContent {
             EquityInsuranceApplicationTheme {
 
-AppNavigation()
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+
+                ) {
+
+                HomeScreen()
+
+                }
+
+
             }
         }
 
     }
 }
+@Preview
+@Composable
+
+fun  HomeScreen(){
+    Column(
+        modifier = Modifier.fillMaxSize()
+    ) {
+      AppNavigation()
+    }
+
+
+}
+
+
+
