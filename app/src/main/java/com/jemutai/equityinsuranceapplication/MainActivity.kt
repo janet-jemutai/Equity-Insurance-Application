@@ -11,6 +11,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.jemutai.equityinsuranceapplication.ui.theme.EquityInsuranceApplicationTheme
@@ -20,6 +21,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             EquityInsuranceApplicationTheme {
+                SetBarColor(color = MaterialTheme.colorScheme.background)
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -33,6 +35,12 @@ class MainActivity : ComponentActivity() {
 
 }
 
+@Composable
+private fun SetBarColor(color: Color) {
+
+
+}
+
 @Preview
 @Composable
 fun HomeScreen() {
@@ -41,7 +49,10 @@ fun HomeScreen() {
             modifier = Modifier.fillMaxSize()
 
         ) {
+            TopNavigationBar()
+            Spacer(modifier = Modifier.height(16.dp))
             Policies()
+            Spacer(modifier = Modifier.height(16.dp))
             ClaimsSection()
             Spacer(modifier = Modifier.height(16.dp))
         }
